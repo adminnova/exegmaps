@@ -12,8 +12,6 @@
 <select name="id">
 <option value="-1">Seleccione .....</option>
 <option value="1">Armar csv para --> Gabriel</option>
-<option value="2">Armar csv para --> David</option>
-<option value="3">Armar csv para --> Carlos</option>
 </select>
 <input type="submit" value="GO.."><br/>
 <input type="radio" name="exetest" value="1" checked="checked">Test generacion Archivo (Muestra 10 registros de prueba en un csv<b>(Recomendable para ver si esta generando bien el archivo)</b>)<br/>
