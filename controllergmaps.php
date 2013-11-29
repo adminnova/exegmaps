@@ -1,35 +1,24 @@
- <meta name="tipo_contenido"  content="text/html;" http-equiv="content-type" charset="utf-8">
+<meta name="tipo_contenido"  content="text/html;" http-equiv="content-type" charset="utf-8">
 <?php
 
 
     if(!$_POST || $_POST['id']=="-1")
 	  {
-	   die("Ojoo!!!Debe sel una opc.....<script>window.location='guigmaps.php'</script>");
+	   die("Ojoo!!!Debe sel una opc.....<script>window.location='index.php'</script>");
 	   }
 	switch($_POST['id'])
 	{
 		case 1:
 		$params['li']=0;
-		$params['ls']=2752;
-		break;
-		
-		case 2:
-		$params['li']=2753;
-		$params['ls']=5505;
-		break;
-		
-		case 3:
-		$params['li']=5507;
-		$params['ls']=8263;
-		break;
-		
+		$params['ls']=100;
+		break;		
 	}
 
 	$params['direccion']=1;
 	$params['ciudad']=5;
 	$params['id']=$_POST['id'];
 	$params['test']=$_POST['exetest'];
-	$filename="baloto.csv";
+	$filename="maps.csv";
 	
 	//execute file
 	converttocoordinates($filename,$params);
@@ -72,11 +61,9 @@ function converttocoordinates($filename,$params)
 	$file=file($filename);
 	
 	
-	$arr[1]="Gabriel";
-	$arr[2]="David";
-	$arr[3]="Carlos";
+	$arr[1]="YOLO";
 	
-	$fileauxname=$arr[$params['id']]."_baloto.csv";
+	$fileauxname=$arr[$params['id']]."_maps.csv";
 	$fw=fopen($fileauxname,"w+");
 	
 	foreach ($file as $num_linea => $linea) {
@@ -128,8 +115,8 @@ function converttocoordinates($filename,$params)
 function printfile($fname)
 {
 	
-  echo "<a href='".$fname."'>Descargar {$fname}</a>";
-  echo '<a href="guigmaps.php">&lt;&lt;&lt;&lt;----Regresar</a>';
+  echo "<a href='".$fname."'>Descargar {$fname}</a><br/>";
+  echo '<a href="index.php">&lt;&lt;&lt;&lt;----Regresar</a>';
 }
 
 
@@ -137,11 +124,11 @@ function printfile($fname)
 exit;
 
 
-//Atencion:zona En contruccion
+//Atencion:zona En construccion
 
 
-$file=file("baloto.csv");
-$fw=fopen("coordbaloto.csv","w+");
+$file=file("maps.csv");
+$fw=fopen("coord.csv","w+");
 foreach ($file as $num_linea => $linea) {
 	
 	$data=explode(";",$linea);

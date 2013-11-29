@@ -4,14 +4,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Gui Gmaps</title>
 </head>
-
 <body>
 <br/><br/><br/><br/><br/><br/><br/><br/><br/>
 <hr/>
-<form name="forma" method="post" action="/gmapsgenerator/controllergmaps.php">
+<form name="forma" method="post" action="controllergmaps.php">
 <select name="id">
 <option value="-1">Seleccione .....</option>
-<option value="1">Armar csv para --> Gabriel</option>
+<option value="1">Armar csv...</option>
 </select>
 <input type="submit" value="GO.."><br/>
 <input type="radio" name="exetest" value="1" checked="checked">Test generacion Archivo (Muestra 10 registros de prueba en un csv<b>(Recomendable para ver si esta generando bien el archivo)</b>)<br/>
