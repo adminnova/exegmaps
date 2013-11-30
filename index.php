@@ -2,11 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Gui Gmaps</title>
+<title>Adress to Google Maps</title>
 </head>
 <body>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<hr/>
+<br/><br/><br/><br/><br/><br/>
 <form name="forma" method="post" action="controllergmaps.php">
 <select name="id">
 <option value="-1">Seleccione .....</option>
