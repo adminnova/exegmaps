@@ -2,14 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Adress to Google Maps</title>
+<title>ExegMaps</title>
 </head>
+
 <body>
-<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<hr/>
 <form name="forma" method="post" action="controllergmaps.php">
 <select name="id">
 <option value="-1">Seleccione .....</option>
-<option value="1">Armar csv...</option>
+<option value="1">Armar csv para --> archivo1</option>
+<option value="2">Armar csv para --> archivo2</option>
+<option value="3">Armar csv para --> archivo3</option>
 </select>
 <input type="submit" value="GO.."><br/>
 <input type="radio" name="exetest" value="1" checked="checked">Test generacion Archivo (Muestra 10 registros de prueba en un csv<b>(Recomendable para ver si esta generando bien el archivo)</b>)<br/>
