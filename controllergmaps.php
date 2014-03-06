@@ -15,7 +15,7 @@
 	{
 		case 1:
 		$params['li']=0;
-		$params['ls']=2007;
+		$params['ls']=367;
 		break;
 		
 		case 2:
