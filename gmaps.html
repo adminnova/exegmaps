@@ -1,0 +1,1522 @@
+<meta name="tipo_contenido"  content="text/html;" http-equiv="content-type" charset="utf-8">
+<script type="text/javascript" src="/Data/Sites/1/htmlfragments/SpryAssets/googlemaps.js?sensor=false"></script>
+<script src="/Data/Sites/1/htmlfragments/SpryAssets/SpryTabbedPanels.js" type="text/javascript"></script>
+<script type ="text/javascript">
+    
+	var map; var infowindow;
+    
+	function InitializeMap(coord,zoomvar) {
+        var latlng = coord;
+        var myOptions =
+        {
+            zoom: zoomvar,
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        map = new google.maps.Map(document.getElementById("map"), myOptions);
+    }
+    
+	function paintdata(obj)
+	{
+		
+		if(obj==1){	
+		//  document.getElementById("map").style.display="none";
+		//  document.getElementById("table").style.display="block";
+		  document.getElementById('table').innerHTML=document.getElementById("data").value;
+		}
+		
+		if(obj==2){
+			
+		//  document.getElementById("map").style.display="block";
+		//  document.getElementById("table").style.display="none"; 	
+		}
+	 
+	}
+
+	function getid(obj){
+	       //document.form.ver[0].checked=true;
+		//   document.getElementById("map").style.display="block";
+	    //   document.getElementById("table").style.display="none"; 
+		var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
+		   markicons();
+		}
+
+    function markicons() {
+
+       // InitializeMap();
+
+        var ltlng = [];
+		var info=[];
+		var city=[];
+		var selectcity=[];
+		var matriculamercantil=[];
+		var resolucion=[];
+		//var auxcity=[];
+
+	/************************************************************* 
+	
+	Inicio Configuracion parametros añadir un punto al mapa 
+	
+	Parametro info: Ingresar Nombre del lugar, Direccion , telefono
+	Ejemplo:
+	info.push('SU PASE NIZA<br/>Local 14 Of 212<br/>3143570059');
+	
+	parametro ltlng: Ingresar las coordernas que corresponden a la ubicacion del punto en el mapa
+	Ejemplo:
+	ltlng.push(new google.maps.LatLng(4.7500456,-74.1023947 ))
+	Parametro city: Se debe poner la ciudad a donde corresponde el punto
+	Ejemplo:
+	city.push('BOGOTA')
+	
+	Fin Configuracion Direccion 
+	
+			*************************************************************/
+	/*****************(#1)*******************/
+info.push('Su Pase Niza<br/>Local 14 Of 212<br/>3143570059');
+ltlng.push(new google.maps.LatLng(4.7500456,-74.1023947))
+matriculamercantil.push('01589342 - 11/04/2006 (Según info CC), 11/11/2006 (según MM)')
+resolucion.push('005326 - 30/11/2006 ')
+city.push('Bogota')
+/************************************/
+/*****************(#2)*******************/
+info.push('Su Pase 7 Agosto <br/>Cl 68 No 23 - 11<br/>');
+ltlng.push(new google.maps.LatLng(4.6509144,-74.0570396))
+matriculamercantil.push('1589339 - 11/O4/2006 (según CC) 11/11/2006 (Según MM)')
+resolucion.push('005775 - 20/11/2009 ')
+city.push('Bogota')
+/************************************/
+/*****************(#3)*******************/
+info.push('Su Pase Carvajal<br/>Cr 69 B No. 24 A - 08 Sur<br/>');
+ltlng.push(new google.maps.LatLng(4.6141302,-74.1354441))
+matriculamercantil.push('02207946 - 25/04/2012 (Según CC) 01573318 (sin informacion de fecha según MT)')
+resolucion.push('005293 - 28/11/2006 ')
+city.push('Bogota')
+/************************************/
+/*****************(#4)*******************/
+info.push('Su Pase Ips Sevillana<br/>Av Boyaca No. 50 - 27 Sur,Bogota,cundinamarca<br/>');
+ltlng.push(new google.maps.LatLng(4.5950975,-74.1475332))
+matriculamercantil.push('01916101 - 23/07/2009')
+resolucion.push('005977 - 02/12/2009 ')
+city.push('Bogota')
+/************************************/
+/*****************(#5)*******************/
+info.push('Evaluando Bucaramanga <br/>Cra 34 No 52 - 62<br/>6909239');
+ltlng.push(new google.maps.LatLng(7.1251267,-73.1117917))
+matriculamercantil.push('129800 - 28/04/2006')
+resolucion.push('005370 - 02/12/2011 ')
+city.push('Bucaramanga')
+/************************************/
+/*****************(#6)*******************/
+info.push('Evaluando Floridablanca<br/>Cra 8 No. 9 - 06 Piso 3 Barrio Centro<br/>6913559');
+ltlng.push(new google.maps.LatLng(7.1252423,-73.134138))
+matriculamercantil.push('129801 - 28/04/2006')
+resolucion.push('005368 - 02/12/2011 ')
+city.push('Floridablanca')
+/************************************/
+/*****************(#7)*******************/
+info.push('Evaluando Giron<br/>Cl 30 No. 26 - 24<br/>6467698');
+ltlng.push(new google.maps.LatLng(7.0668546,-73.1669408))
+matriculamercantil.push('129803 - 28/04/2006')
+resolucion.push('005367 - 02/12/2011 ')
+city.push('Giron')
+/************************************/
+/*****************(#8)*******************/
+info.push('Evaluando San Gil<br/>Cra. 9 No 16 - 08 San Gil Santander<br/>7242538');
+ltlng.push(new google.maps.LatLng(6.552601,-73.1278255))
+matriculamercantil.push('129802 - 28/04/2006')
+resolucion.push('005371 - 02/12/2011 ')
+city.push('San Gil')
+/************************************/
+/*****************(#9)*******************/
+info.push('Evaluando Barrancabermeja<br/>Cra 25 No. 47 11 Barrio Recreo<br/>6226448');
+ltlng.push(new google.maps.LatLng(7.0588066,-73.8533296))
+matriculamercantil.push('00060697 - 24/05/2006')
+resolucion.push('005369 - 02/12/2011 ')
+city.push('Barrancabermeja')
+/************************************/
+/*****************(#10)*******************/
+info.push('Evaluando Popayan<br/>Cl 5 A No. 12 - 62 <br/>8214084-8372942-3164504849');
+ltlng.push(new google.maps.LatLng(2.4412836,-76.6060485))
+matriculamercantil.push('00094025 - 15/02/2007')
+resolucion.push('004549 - 01/11/20011 ')
+city.push('Popayan')
+/************************************/
+/*****************(#11)*******************/
+info.push('Evaluando Yopal<br/>Cra. 20 No. 20 A - 30<br/>6347670-3188067688');
+ltlng.push(new google.maps.LatLng(5.3467582,-72.3998996))
+matriculamercantil.push('00055552 - 16/05/2006')
+resolucion.push('01421 - 23/12/2011 ')
+city.push('Yopal')
+/************************************/
+/*****************(#12)*******************/
+info.push('Evaluando Arauca<br/>Cra 9 No. 17 - 04 <br/>8850852');
+ltlng.push(new google.maps.LatLng(7.0849465,-70.7474923))
+matriculamercantil.push('00019417 - 17/09/2007')
+resolucion.push('000393 - 16/02/2012 ')
+city.push('Arauca')
+/************************************/
+/*****************(#13)*******************/
+info.push('Evaluando Ocaña<br/>Cl 10 No. 11 - 75<br/>5697315 - 3138920021');
+ltlng.push(new google.maps.LatLng(8.2330274,-73.3531246))
+matriculamercantil.push('00016522 - 22/01/2007')
+resolucion.push('000392 - 16/02/2012 ')
+city.push('Ocaña')
+/************************************/
+/*****************(#14)*******************/
+info.push('Evaluando Pamplona<br/>Cl 8 No 5 - 49<br/>5686362');
+ltlng.push(new google.maps.LatLng(7.37223,-72.6475))
+matriculamercantil.push('00014470 - 21/03/2007')
+resolucion.push('000390 - 16/02/2012 ')
+city.push('Pamplona')
+/************************************/
+/*****************(#15)*******************/
+info.push('Evaluando Cucuta<br/>Local E21 Barrio San Mateo<br/>5764371');
+ltlng.push(new google.maps.LatLng(7.8941667,-72.5038889))
+matriculamercantil.push('00158466 - 30/01/2007')
+resolucion.push(' ')
+city.push('Cucuta')
+/************************************/
+/*****************(#16)*******************/
+info.push('Evaluando Patios<br/>Av 10 No. 30 - 72 Centro<br/>5806038');
+ltlng.push(new google.maps.LatLng(7.811162,-72.5173882))
+matriculamercantil.push('00158486 - 30/01/2007')
+resolucion.push('000394 - 16/02/2012 ')
+city.push('Los Patios')
+/************************************/
+/*****************(#17)*******************/
+info.push('Evaluando Chapinero<br/>Calle 64 #18 -24<br/>');
+ltlng.push(new google.maps.LatLng(4.6536182,-74.0679336))
+matriculamercantil.push('01834103 - 05/09/2008')
+resolucion.push('004771 - 11/11/2011 ')
+city.push('Bogota')
+/************************************/
+/*****************(#18)*******************(inactivo)
+info.push('Crc 213 Marinilla<br/>Cr 32a No 30 - 26<br/>5483838');
+ltlng.push(new google.maps.LatLng(6.1745033,-75.3341944))
+matriculamercantil.push('00057335 - 02/03/2007')
+resolucion.push('001743 - 07/05/2007 ')
+city.push('Marinilla')
+/************************************/
+/*****************(#19)*******************(inactivo)
+info.push('Crc 143 San Jose Del Guaviare<br/>Cr 23 No 10 - 80<br/>3108504126');
+ltlng.push(new google.maps.LatLng(2.4722236,-72.6031082))
+matriculamercantil.push('00011620 - 21/04/2008')
+resolucion.push('003501 - 27/08/2008 ')
+city.push('San Jose De Guaviare')
+/************************************/
+/*****************(#20)*******************(inactivo)
+info.push('Crc 012 Colsubsidio<br/>Cl 27 A # 25 - 09<br/>');
+ltlng.push(new google.maps.LatLng(4.623157,-74.0771813))
+matriculamercantil.push('01647626 - 25/10/2006')
+resolucion.push('005135 - 23/11/2006 ')
+city.push('Bogota')
+/************************************/
+/*****************(#21)*******************(inactivo)
+info.push('Crc 03 Alamos<br/>Diagonal 63f # 88 A - 29<br/>5300510');
+ltlng.push(new google.maps.LatLng(4.6855031,-74.1135451))
+matriculamercantil.push('01619179 - 25/07/2006')
+resolucion.push('003820 - 23/08/2006 ')
+city.push('Bogota')
+/************************************/
+/*****************(#22)*******************(inactivo)
+info.push('Crc 359 Cartago<br/>Cl 10 No. 14 - 152<br/>2110041');
+ltlng.push(new google.maps.LatLng(4.7535243,-75.9129057))
+matriculamercantil.push('00054480 - 01/12/2006')
+resolucion.push('005844 - 26/11/2009 ')
+city.push('Cartago')
+/************************************/
+/*****************(#23)*******************(inactivo)
+info.push('Crc 133 Tulua<br/>Cl 29 No 27 - 35 <br/>');
+ltlng.push(new google.maps.LatLng(4.079401,-76.1883757))
+matriculamercantil.push('55421 - 25/09/2006')
+resolucion.push('000168 - 18/01/2011 ')
+city.push('Tulua')
+/************************************/
+/*****************(#24)*******************(inactivo)
+info.push('Crc 155 Facatativa<br/>Cr 3 No 2 - 51 P-2 Y 3 <br/>8905922 - 3108470248');
+ltlng.push(new google.maps.LatLng(4.8098556,-74.3512122))
+matriculamercantil.push('00049641 - 05/03/2007')
+resolucion.push('006427 - 23/12/2011 ')
+city.push('Facatativa')
+/************************************/
+/*****************(#25)*******************/
+info.push('Grupo Medicas Sede 1<br/>Calle 68 # 23 - 48<br/>');
+ltlng.push(new google.maps.LatLng(4.658737,-74.069282))
+matriculamercantil.push('01787121 - 27/03/2008')
+resolucion.push('001900 - 16/05/2008 ')
+city.push('Bogota')
+/************************************/
+/*****************(#26)*******************/
+info.push('Grupo Medicas Sede 2<br/>Auto Norte No. 232 - 35 Local 1032<br/>');
+ltlng.push(new google.maps.LatLng(4.807000472889362,-74.03785228729248))
+matriculamercantil.push('1786161 - 25/03/2008')
+resolucion.push(' ')
+city.push('Bogota')
+/************************************/
+/*****************(#27)*******************/
+info.push('Grupo Medicas Sede 3<br/>Cl 9a No 9 - 46<br/>7261171');
+ltlng.push(new google.maps.LatLng(5.6167143,-73.8225743))
+matriculamercantil.push('00112787 - 18/01/')
+resolucion.push(' ')
+city.push('Chiquinquira')
+/************************************/
+/*****************(#28)*******************/
+info.push('Evaluando Pereira<br/>Carrera 8bis # 35 - 30<br/>3290041');
+ltlng.push(new google.maps.LatLng(4.8149829,-75.7080077))
+matriculamercantil.push('271517452 - 24/08/2006')
+resolucion.push('003026 - 25/08/2011 ')
+city.push('Pereira')
+/************************************/
+/*****************(#29)*******************/
+info.push('Evaluando Dosquebradas<br/>Cr 16 No. 32 - 18<br/>3323284');
+ltlng.push(new google.maps.LatLng(4.8159473,-75.6914897))
+matriculamercantil.push('00028959 - 09/10/2006')
+resolucion.push('003029 - 25/08/2011 ')
+city.push('Dosquebradas')
+/************************************/
+/*****************(#30)*******************/
+info.push('Evaluando Manizales<br/>Cl 22 No 18 - 29 Piso 2<br/>8722922');
+ltlng.push(new google.maps.LatLng(5.0698479,-75.517701))
+matriculamercantil.push('00118677 - 04/09/2006')
+resolucion.push('003028 - 25/08/2011 ')
+city.push('Manizales')
+/************************************/
+/*****************(#31)*******************/
+info.push('Evaluando Armenia<br/>Cl 26 No 15 - 39<br/>6133644');
+ltlng.push(new google.maps.LatLng(4.5365498,-75.6834))
+matriculamercantil.push('0146167 - 15/09/2006')
+resolucion.push('003027 - 25/08/2011 ')
+city.push('Armenia')
+/************************************/
+/*****************(#32)*******************(inactivo)
+info.push('Precision Ips Ltda<br/>Carrera 10 # 20 - 62<br/>7704587');
+ltlng.push(new google.maps.LatLng(5.7226369,-72.9227524))
+matriculamercantil.push('00042174 - 30/10/2006')
+resolucion.push('001301 - 03/05/2011 ')
+city.push('Sogamoso')
+/************************************/
+/*****************(#33)*******************/
+info.push('Maifesalid Ltada<br/>Calle 18 # 20 - 30<br/>7623020-3125820942');
+ltlng.push(new google.maps.LatLng(5.837834,-73.0345688))
+matriculamercantil.push('00045835 - 21/12/2005')
+resolucion.push('000054 - 11/01/2012 ')
+city.push('Duitama')
+/************************************/
+/*****************(#34)*******************(inactivo)
+info.push('Crc 162 Funza<br/>Calle 14 # 10 - 92 Piso 2 <br/>8263556');
+ltlng.push(new google.maps.LatLng(4.7146023,-74.2109732))
+matriculamercantil.push('OOO57473 - 05/08/2008')
+resolucion.push('002902 - 14/05/2012 ')
+city.push('Funza')
+/************************************/
+/*****************(#35)*******************/
+info.push('Crps Girardot<br/>Carrera 7a # 29 - 87 Barrio Magdalena<br/>8310356');
+ltlng.push(new google.maps.LatLng(4.303384,-74.8003275))
+matriculamercantil.push('00047539 - 22/08/2006')
+resolucion.push('004437 - 12/10/2010 ')
+city.push('Girardot')
+/************************************/
+/*****************(#36)*******************/
+info.push('Crps Buga<br/>Calle 9 # 17 - 62<br/>');
+ltlng.push(new google.maps.LatLng(3.9028483,-76.3039842))
+matriculamercantil.push('37602 - 03/08/2007')
+resolucion.push('003815 - 13/09/2007 ')
+city.push('Bugalagrande')
+/************************************/
+/*****************(#37)*******************/
+info.push('Ser Conductor Mocoa<br/>Calle 8 # 4 - 02 Piso 3<br/>');
+ltlng.push(new google.maps.LatLng(1.1460533,-76.646534))
+matriculamercantil.push('34079 - 18/12/2009')
+resolucion.push('000963 - 05/04/2011 ')
+city.push('Mocoa')
+/************************************/
+/*****************(#38)*******************/
+info.push('Conduser Uno Ltda<br/>Carrera 15bis # 38 - 41<br/>3423430');
+ltlng.push(new google.maps.LatLng(4.8091008,-75.7081411))
+matriculamercantil.push('00032651 - 11/12/2008 (SEGÚN CC)-00032668 (SEGÚN MT SIN FECHA)')
+resolucion.push('001949 - 19/05/2009 ')
+city.push('Risaralda')
+/************************************/
+/*****************(#39)*******************/
+info.push('Ser Conductor Cartagena<br/>Providencia Km 71 No. 54 - 315 Of 201<br/>');
+ltlng.push(new google.maps.LatLng(10.3891178,-75.4811641))
+matriculamercantil.push('09-238905 - 02/01/2008')
+resolucion.push('001921 - 20/06/2011 ')
+city.push('Bolivar')
+/************************************/
+/*****************(#40)*******************/
+info.push('Ser Conductor Ubate<br/>Carrera 6 # 6 - 38<br/>');
+ltlng.push(new google.maps.LatLng(5.3063247,-73.8143894))
+matriculamercantil.push('01814825 - 02/07/2008')
+resolucion.push('000962 - 05/04/2011 ')
+city.push('Ubate')
+/************************************/
+/*****************(#41)*******************/
+info.push('Crc 102 Palermo<br/>Calle 33 # 5p 02<br/>8748073');
+ltlng.push(new google.maps.LatLng(2.9460088,-75.2877782))
+matriculamercantil.push('00167097 - 27/11/2006')
+resolucion.push('001920 - 20/06/2011 ')
+city.push('Palermo')
+/************************************/
+/*****************(#42)*******************/
+info.push('Crc Inprosalud Cucuta<br/>Avenida 1 # 9 - 76 Apt 202<br/>3837680-7443330-3208453063');
+ltlng.push(new google.maps.LatLng(7.9178918,-72.5215417))
+matriculamercantil.push('00199052 - 18/12/2009')
+resolucion.push('001926 - 20/06/2011 ')
+city.push('Cucuta')
+/************************************/
+/*****************(#43)*******************/
+info.push('Crc 203 Envigado<br/>Carrera 48 # 49s - 40<br/>28888272');
+ltlng.push(new google.maps.LatLng(6.1738117,-75.5920904))
+matriculamercantil.push('00115099-25/01/2007(SEGÚN CC)-01951418 - 18/12/2009(SEGÚN MT)')
+resolucion.push('00964 - 05/04/2011 ')
+city.push('Envigado')
+/************************************/
+/*****************(#44)*******************/
+info.push('Ser Conductor Caucasia<br/>Cr 7 No. 19 - 09 Piso 2<br/>');
+ltlng.push(new google.maps.LatLng(7.987471,-75.1952557))
+matriculamercantil.push('21-449461 - 02/08/2007')
+resolucion.push('000961 - 05/04/2011 ')
+city.push('Caucasia')
+/************************************/
+/*****************(#45)*******************/
+info.push('Ser Conductor Galerias Ltda<br/>Transversal 24 # 53c-56<br/>');
+ltlng.push(new google.maps.LatLng(4.6478557,-74.0733278))
+matriculamercantil.push('01798372 - 30/04/2008')
+resolucion.push('006428 - 23/12/2011 ')
+city.push('Bogota')
+/************************************/
+/*****************(#46)*******************/
+info.push('Ser Conductor Garzon<br/>Cr 8 No. 7 - 11 Ofi 2007<br/>3138166775');
+ltlng.push(new google.maps.LatLng(2.1969132,-75.6270636))
+matriculamercantil.push('00178762 - 19/10/2007')
+resolucion.push('001919 - 20/06/2011 ')
+city.push('Garzon')
+/************************************/
+/*****************(#47)*******************/
+info.push('Ser Conductor Ibague<br/>Cr 5 Cl 60 Cam Norte Barrio La Florida<br/>7443330');
+ltlng.push(new google.maps.LatLng(4.4380304,-75.2173585))
+matriculamercantil.push('00190773 - 15/04/2008')
+resolucion.push('001924 - 20/06/2011 ')
+city.push('Ibague')
+/************************************/
+/*****************(#48)*******************/
+info.push('Ser Conductor Monteria<br/>Cr 7 No. 58-30 Ap. La Castellana<br/>7928282');
+ltlng.push(new google.maps.LatLng(8.7694076,-75.8675403))
+matriculamercantil.push('00093078 - 21/02/2008')
+resolucion.push('002528 - 28/07/2011 ')
+city.push('Monteria')
+/************************************/
+/*****************(#49)*******************/
+info.push('Ser Conductor Santamarta<br/>Carrera 3 # 15-34<br/>4215713-4231224');
+ltlng.push(new google.maps.LatLng(11.2443384,-74.212664))
+matriculamercantil.push('00106959 - 20/11/2007')
+resolucion.push('000960 - 05/04/2011 ')
+city.push('Santamarta')
+/************************************/
+/*****************(#50)*******************/
+info.push('Ser Conductor Yopal<br/>Cl 15 No. 14-27 Barrio Corocora<br/>6347800');
+ltlng.push(new google.maps.LatLng(5.3422222,-72.4000351))
+matriculamercantil.push('00063210 - 22/08/2007')
+resolucion.push('001923 - 20/06/2011 ')
+city.push('Yopal')
+/************************************/
+/*****************(#51)*******************/
+info.push('Crc 320 Sincelejo<br/>Carrera 19b # 16-60<br/>');
+ltlng.push(new google.maps.LatLng(9.3060904,-75.3955125))
+matriculamercantil.push('OOO49882- 26/02/2007')
+resolucion.push('001922 - 20/06/2011 ')
+city.push('Sincelejo')
+/************************************/
+/*****************(#52)*******************/
+info.push('Ser Conductor Granada<br/>Calle 15 # 14 - 63<br/>6500240');
+ltlng.push(new google.maps.LatLng(3.5402215,-73.7075368))
+matriculamercantil.push('00175498 - 08/10/2008')
+resolucion.push('006709 - 29/12/2011 ')
+city.push('Granada')
+/************************************/
+/*****************(#53)*******************/
+info.push('Ser Conductor Calle 53<br/>Cr 72 No. 53 - 85<br/>');
+ltlng.push(new google.maps.LatLng(4.671167342974413,-74.10724639892578))
+matriculamercantil.push('')
+resolucion.push(' ')
+city.push('Bogota')
+/************************************/
+/*****************(#54)*******************/
+info.push('Inprosalud Oe 20<br/>Calle 79b Sur # 50-130<br/>7443330');
+ltlng.push(new google.maps.LatLng(6.1742881,-75.6061832))
+matriculamercantil.push('00112012 - 11/08/2006')
+resolucion.push(' ')
+city.push('La Estrella')
+/************************************/
+/*****************(#55)*******************/
+info.push('Inprosalud 02<br/>Calle 4 # 3-32<br/>8376310');
+ltlng.push(new google.maps.LatLng(2.3876722,-75.8913156))
+matriculamercantil.push('00218834 - 12/04/2011')
+resolucion.push('004609 - 20/06/2012 ')
+city.push('La Plata')
+/************************************/
+/*****************(#56)*******************/
+info.push('Tu Medico<br/>Diagonal 3 # 3 -201<br/>7443330-3144436667');
+ltlng.push(new google.maps.LatLng(5.0088651,-74.4785827))
+matriculamercantil.push('00058190 - 29/09/2008')
+resolucion.push('001925 - 20/06/2011 ')
+city.push('Villeta')
+/************************************/
+/*****************(#57)*******************/
+info.push('Serconductor Cali<br/>Carrera 94a # 42-12 P-2<br/>');
+ltlng.push(new google.maps.LatLng(3.375461,-76.5473483))
+matriculamercantil.push('712003 - 09/05/2007')
+resolucion.push('002574 - 25/06/2007 ')
+city.push('Cali')
+/************************************/
+/*****************(#58)*******************/
+info.push('A-prueba Novel Itagui<br/>Carrera 52 # 51a - 07<br/>3714797');
+ltlng.push(new google.maps.LatLng(6.1737342,-75.6096267))
+matriculamercantil.push('')
+resolucion.push('004315 - 26/09/2006 ')
+city.push('Itagui')
+/************************************/
+/*****************(#59)*******************/
+info.push('Magdalena Medio Ips Ltda<br/>Calle 7 # 17-46<br/>4291550-3144436667');
+ltlng.push(new google.maps.LatLng(5.4448715,-74.6675271))
+matriculamercantil.push('00028693 - 13/03/2007')
+resolucion.push('001749 - 07/05/2007 ')
+city.push('Dorada')
+/************************************/
+/*****************(#60)*******************/
+info.push('A-prueba Acacias<br/>Cl 15 No. 21 - 04 Cooperativo<br/>6564560');
+ltlng.push(new google.maps.LatLng(3.9880643,-73.7641481))
+matriculamercantil.push('00161598 - 01/10/2007')
+resolucion.push('007108 - 06/08/2012 ')
+city.push('Acacias')
+/************************************/
+/*****************(#61)*******************/
+info.push('A-prueba Bogota Alamos<br/>Diagonal 63f # 88a 54<br/>');
+ltlng.push(new google.maps.LatLng(4.6864277,-74.1138085))
+matriculamercantil.push('01917793 - 29/07/2009')
+resolucion.push('007104 - 06/08/2012 ')
+city.push('Bogota')
+/************************************/
+/*****************(#62)*******************/
+info.push('A-prueba Autonorte<br/>Autonorte # 86 - 65<br/>');
+ltlng.push(new google.maps.LatLng(4.6741307,-74.059681))
+matriculamercantil.push('01709394 - 04/06/2007')
+resolucion.push('007102 - 06/08/2012 ')
+city.push('Bogota')
+/************************************/
+/*****************(#63)*******************/
+info.push('A-prueba Barranquilla<br/>Carrrera 46 # 39 - 02 <br/>3441954');
+ltlng.push(new google.maps.LatLng(10.985295,-74.7741062))
+matriculamercantil.push('494246 - 09/02/2010')
+resolucion.push('007103 - 06/08/2012 ')
+city.push('Barranquilla')
+/************************************/
+/*****************(#64)*******************/
+info.push('A-prueba Bello<br/>Dg 50 A No. 42 - 95 P-1<br/>');
+ltlng.push(new google.maps.LatLng(6.3373759,-75.5486499))
+matriculamercantil.push('2143965902 - 14/02/2007')
+resolucion.push('001136 - 21/03/2012 ')
+city.push('Bello')
+/************************************/
+/*****************(#65)*******************/
+info.push('A-prueba Cali<br/>Calle 70n # 3b N 200<br/>');
+ltlng.push(new google.maps.LatLng(3.4941778,-76.5227899))
+matriculamercantil.push('693618 - 07/09/2006')
+resolucion.push('005213 - 29/11/2011 ')
+city.push('Cali')
+/************************************/
+/*****************(#66)*******************/
+info.push('A-prueba Bogota Cedritos<br/>Cl 147 No. 19-58 Lc 29<br/>');
+ltlng.push(new google.maps.LatLng(4.7296952,-74.0458073))
+matriculamercantil.push('01917816 - 29/07/2009')
+resolucion.push('007101 - 06/08/2012 ')
+city.push('Bogota')
+/************************************/
+/*****************(#67)*******************/
+info.push('A-prueba Espinal<br/>Calle 11 # 8-63<br/>2485224');
+ltlng.push(new google.maps.LatLng(4.1564506,-74.8882954))
+matriculamercantil.push('00053704 - 01/02/2008')
+resolucion.push('007110 - 06/08/2012 ')
+city.push('Espinal')
+/************************************/
+/*****************(#68)*******************/
+info.push('A-prueba Ibague<br/>Cr 5 Zona Industrial El Papayo Antiguas Inastalaciones De La Cruz Roja<br/>2690992-3175170117');
+ltlng.push(new google.maps.LatLng(4.42924615202554,-75.20755290985107))
+matriculamercantil.push('00178048 - 15/01/2007')
+resolucion.push('007105 - 06/08/2012 ')
+city.push('Ibague')
+/************************************/
+/*****************(#69)*******************/
+info.push('A-prueba Neiva<br/>Mercaneiva Lc 2229<br/>8709600');
+ltlng.push(new google.maps.LatLng(2.9986111,-75.3044444))
+matriculamercantil.push('00174601 - 22/06/2007')
+resolucion.push('03335 - 30/05/2012 ')
+city.push('Neiva')
+/************************************/
+/*****************(#70)*******************/
+info.push('A-pueba Bogota Niza<br/>Av Suba No. 124-32 Lc 32<br/>');
+ltlng.push(new google.maps.LatLng(4.7083986,-74.0714293))
+matriculamercantil.push('01917799 - 29/07/2009')
+resolucion.push('002842 - 30/05/2012 ')
+city.push('Bogota')
+/************************************/
+/*****************(#71)*******************/
+info.push('A-prueba Pasto<br/>Calle 18 # 19b - 08<br/>');
+ltlng.push(new google.maps.LatLng(1.2085599,-77.2760936))
+matriculamercantil.push('107929 - 10/08/2006')
+resolucion.push('007112 - 06/08/2012 ')
+city.push('Pasto')
+/************************************/
+/*****************(#72)*******************/
+info.push('A-prueba Palmira<br/>Calle 47 # 36-14<br/>');
+ltlng.push(new google.maps.LatLng(3.5425965,-76.3083645))
+matriculamercantil.push('824232 - 27/11/2007')
+resolucion.push('007111 - 06/08/2012 ')
+city.push('Palmira')
+/************************************/
+/*****************(#73)*******************/
+info.push('A-prueba Bogota Av Primero De Mayo<br/>Av Primero De Mayo # 69b - 22<br/>');
+ltlng.push(new google.maps.LatLng(4.6127535,-74.1341752))
+matriculamercantil.push('01554516 - 28/12/2005')
+resolucion.push('003588 - 10/08/2006 ')
+city.push('Bogota')
+/************************************/
+/*****************(#74)*******************/
+info.push('A-prueba Bogota Restrepo<br/> Calle 21s # 16-73<br/>');
+ltlng.push(new google.maps.LatLng(4.5826519,-74.1029941))
+matriculamercantil.push('01556680 - 11/01/2006')
+resolucion.push('003587 - 10/08/2006 ')
+city.push('Bogota')
+/************************************/
+/*****************(#75)*******************/
+info.push('A-prueba Bogota Tequendama<br/>Cr 10 No 27 - 51 Lc 207<br/>');
+ltlng.push(new google.maps.LatLng(4.6143682,-74.0696135))
+matriculamercantil.push('01552129 - 06/12/2005')
+resolucion.push('003337 - 30/05/2012 ')
+city.push('Bogota')
+/************************************/
+/*****************(#76)*******************/
+info.push('A-prueba Tunja Maldonado<br/>Carrera 10 # 27 - 16<br/>7424545');
+ltlng.push(new google.maps.LatLng(5.5283287,-73.363377))
+matriculamercantil.push('00091020 - 08/08/2007')
+resolucion.push('007109 - 06/08/2012 ')
+city.push('Tunja')
+/************************************/
+/*****************(#77)*******************/
+info.push('A-prueba Valledupar No 1<br/>Calle 13 # 11 - 39 <br/>5744595');
+ltlng.push(new google.maps.LatLng(10.4698156,-73.2688698))
+matriculamercantil.push('00081626 - 02/08/2007')
+resolucion.push('000859 - 08/03/2012 ')
+city.push('Valledupar')
+/************************************/
+/*****************(#78)*******************/
+info.push('A-prueba Medellin<br/>Cr 77c # 52-37<br/>');
+ltlng.push(new google.maps.LatLng(6.2691352,-75.5444227))
+matriculamercantil.push('21-431368-02 - 03/08/2006')
+resolucion.push('005513 - 13/12/2011 ')
+city.push('Medellin')
+/************************************/
+/*****************(#79)*******************/
+info.push('A-prueba Mosquera<br/>Cr 1 No 2-11 P-2<br/>');
+ltlng.push(new google.maps.LatLng(4.6949457,-74.1909231))
+matriculamercantil.push('00052872 - 19/09/07')
+resolucion.push('003333 - 30/05/12 ')
+city.push('Mosquera')
+/************************************/
+/*****************(#80)*******************/
+info.push('A-prueba Tulua<br/>Carrera 30 # 22 - 13<br/>');
+ltlng.push(new google.maps.LatLng(4.0876546,-76.1932798))
+matriculamercantil.push('532742 - 27/02/2006')
+resolucion.push('007106 - 06/08/2012 ')
+city.push('Tulua')
+/************************************/
+/*****************(#81)*******************/
+info.push('A-prueba Monteria<br/>Calle 56 # 6 - 86<br/>');
+ltlng.push(new google.maps.LatLng(8.7646243,-75.8642219))
+matriculamercantil.push('00085517 - 31/10/2006')
+resolucion.push('007107 - 06/08/2012 ')
+city.push('Monteria')
+/************************************/
+/*****************(#82)*******************/
+info.push('A-prueba Sabaneta<br/>Calle 75 Sur # 45 - 26<br/>');
+ltlng.push(new google.maps.LatLng(6.1495681,-75.6186142))
+matriculamercantil.push('00114458 - 13/12/2006')
+resolucion.push('005769 - 03/06/2012 ')
+city.push('Sabaneta')
+/************************************/
+/*****************(#83)*******************/
+info.push('Simetric Armenia<br/>Carrera 19 # 24 -15<br/>67449973');
+ltlng.push(new google.maps.LatLng(4.5703152,-75.6496232))
+matriculamercantil.push('141214 - 11/01/2006')
+resolucion.push('002486 - 13/06/2006 ')
+city.push('Armenia')
+/************************************/
+/*****************(#84)*******************/
+info.push('Simetric Barranquilla<br/>Cr 47 No. 84-27 Lc 12 Y 13 <br/>3775950');
+ltlng.push(new google.maps.LatLng(10.9854658,-74.7713038))
+matriculamercantil.push('405874 - 06/02/2006')
+resolucion.push('002468 - 13/06/2006 ')
+city.push('Barranquilla')
+/************************************/
+/*****************(#85)*******************/
+info.push('Simetric Can Indumil<br/>Carrera 57 # 44b - 2<br/>');
+ltlng.push(new google.maps.LatLng(4.6467223,-74.0931043))
+matriculamercantil.push('0269235 - 24/02/2011')
+resolucion.push('004157 - 14/10/2011 ')
+city.push('Bogota')
+/************************************/
+/*****************(#86)*******************/
+info.push('Simetric Alamos<br/>Calle 64g # 90a - 95<br/>');
+ltlng.push(new google.maps.LatLng(4.6886006,-74.1150655))
+matriculamercantil.push('01552316 - 07/12/2005')
+resolucion.push('002467 - 13/06/2006 ')
+city.push('Bogota')
+/************************************/
+/*****************(#87)*******************/
+info.push('Simetric Sur<br/>Calle 26 # 70b - 24<br/>');
+ltlng.push(new google.maps.LatLng(4.6637748,-74.109542))
+matriculamercantil.push('01583185 - 24/03/2006')
+resolucion.push('002478 - 13/06/2006 ')
+city.push('Bogota')
+/************************************/
+/*****************(#88)*******************/
+info.push('Simetric Cali Norte<br/>Av 4 Norte No. 64 N - 44 Lc 9<br/>');
+ltlng.push(new google.maps.LatLng(3.4518066,-76.5372207))
+matriculamercantil.push('676932 - 03/02/2006')
+resolucion.push('002487 - 13/06/2006 ')
+city.push('Cali')
+/************************************/
+/*****************(#89)*******************/
+info.push('Simetric Cali - Candelaria<br/>Cl 70 No. 7 T Bis -67 Lc 205 Y 206 <br/>');
+ltlng.push(new google.maps.LatLng(3.4540702870526943,-76.4852499961853))
+matriculamercantil.push('676740 - 01/02/2006')
+resolucion.push('003248 - 26/06/2006 ')
+city.push('Cali')
+/************************************/
+/*****************(#90)*******************/
+info.push('Simetric Cartagena<br/>Av Del Arsenal No. 10-49 P-2<br/>');
+ltlng.push(new google.maps.LatLng(10.3873369,-75.5196631))
+matriculamercantil.push('09213664 - 31/01/2006')
+resolucion.push('002469 - 13/06/2006 ')
+city.push('Cartagena')
+/************************************/
+/*****************(#91)*******************/
+info.push('Simetric Dosquebradas<br/>Cr 16 No. 32 56 Lc 11/12/13<br/>3224841');
+ltlng.push(new google.maps.LatLng(4.8085749,-75.7059936))
+matriculamercantil.push('00027660 - 16/03/2006')
+resolucion.push('002484 - 13/06/2006 ')
+city.push('Dosquebradas')
+/************************************/
+/*****************(#92)*******************/
+info.push('Simetric Duitama<br/>Calle 14 # 19-56<br/>7611799');
+ltlng.push(new google.maps.LatLng(5.8240108,-73.0332921))
+matriculamercantil.push('00045899 - 05/01/2006')
+resolucion.push('002475 - 13/06/2006 ')
+city.push('Duitama')
+/************************************/
+/*****************(#93)*******************/
+info.push('Simetric Ibague<br/>Calle 60 # 2a - 49 P-2<br/>2654533');
+ltlng.push(new google.maps.LatLng(4.4334897,-75.2010519))
+matriculamercantil.push('00169570 - 10/01/2006')
+resolucion.push('002470 - 13/06/2006 ')
+city.push('Ibague')
+/************************************/
+/*****************(#94)*******************/
+info.push('Simetric Itagui<br/>Calle 50 # 50 -13 P-2<br/>4213455');
+ltlng.push(new google.maps.LatLng(6.1719471,-75.6097999))
+matriculamercantil.push('00107387 - 17/01/2006')
+resolucion.push('002489 - 13/06/2006 ')
+city.push('Itagui')
+/************************************/
+/*****************(#95)*******************/
+info.push('Simetric Manizales<br/>Calle 23 # 21-41<br/>8721744');
+ltlng.push(new google.maps.LatLng(5.0680442,-75.5170292))
+matriculamercantil.push('113767 - 05/01/2006')
+resolucion.push('002471 - 13/06/2006 ')
+city.push('Manizales')
+/************************************/
+/*****************(#96)*******************/
+info.push('Simetric Medellin<br/>Calle 56 # 56-71 P-2<br/>');
+ltlng.push(new google.maps.LatLng(6.2530302,-75.5633546))
+matriculamercantil.push('2142061602 - 20/01/2006')
+resolucion.push('002488 - 13/06/2006 ')
+city.push('Medellin')
+/************************************/
+/*****************(#97)*******************/
+info.push('Simetric Monteria<br/>Cl 59 No. 6-59 B/la Castellana<br/>7824214');
+ltlng.push(new google.maps.LatLng(8.7701732,-75.8676931))
+matriculamercantil.push('00081051 - 02/02/2006')
+resolucion.push('002474 - 13/06/2006 ')
+city.push('Monteria')
+/************************************/
+/*****************(#98)*******************/
+info.push('Simetric Neiva<br/>Cr 2 No. 8-05 Cc Los Comuneros<br/>88722938');
+ltlng.push(new google.maps.LatLng(2.9258801,-75.2914669))
+matriculamercantil.push('00155842 - 12/01/2006')
+resolucion.push('002483 - 13/06/2006 ')
+city.push('Neiva')
+/************************************/
+/*****************(#99)*******************/
+info.push('Simetric Pereira<br/>Calle 40 # 11-19<br/>');
+ltlng.push(new google.maps.LatLng(4.8135458,-75.7121385))
+matriculamercantil.push('2714907402 - 16/01/2006')
+resolucion.push('2485 - 13/06/2006 ')
+city.push('Pereira')
+/************************************/
+/*****************(#100)*******************/
+info.push('Simetric Rionegro<br/>Carrera 47a # 61-11<br/>5610538');
+ltlng.push(new google.maps.LatLng(6.1610157,-75.3692343))
+matriculamercantil.push('00053322 - 26/01/2006')
+resolucion.push('002491 - 13/06/2006 ')
+city.push('Rionegro')
+/************************************/
+/*****************(#101)*******************/
+info.push('Simetric Sabaneta<br/>Carrera 45 # 72s -140 P-2<br/>2889123');
+ltlng.push(new google.maps.LatLng(6.1470101,-75.6200762))
+matriculamercantil.push('00107386 - 17/01/2006')
+resolucion.push('002492 - 13/06/2006 ')
+city.push('Sabaneta')
+/************************************/
+/*****************(#102)*******************/
+info.push('Simetric Santamarta<br/>Cl 23 No. 4-27 Lc 226<br/>4314437');
+ltlng.push(new google.maps.LatLng(11.2393459,-74.2118586))
+matriculamercantil.push('00094156 - 27/01/2006')
+resolucion.push('002476 - 13/06/2006 ')
+city.push('Santamarta')
+/************************************/
+/*****************(#103)*******************/
+info.push('Simetric Sogamoso<br/>Cr 8 No. 7-08 Av El Sol Esquina<br/>3112324209');
+ltlng.push(new google.maps.LatLng(5.8340247,-73.0369943))
+matriculamercantil.push('00039968 - 10/01/2006')
+resolucion.push('002472 - 13/06/2006 ')
+city.push('Duitama')
+/************************************/
+/*****************(#104)*******************/
+info.push('Simetric Tunja<br/>Cr 6 No. 36 - 25 Lc 116<br/>7435880');
+ltlng.push(new google.maps.LatLng(5.5720306,-73.3420558))
+matriculamercantil.push('00082424 - 23/01/3006')
+resolucion.push('002473 - 13/06/2006 ')
+city.push('Tunja')
+/************************************/
+/*****************(#105)*******************/
+info.push('Simetric Valledupar<br/>Calle 15 # 9-30<br/>5749224-5713628');
+ltlng.push(new google.maps.LatLng(10.4677781,-73.2615703))
+matriculamercantil.push('00075186 - 04/01/2006')
+resolucion.push('002477 - 13/06/2006 ')
+city.push('Valledupar')
+/************************************/
+/*****************(#106)*******************/
+info.push('Simetric Villavicencio<br/>Cl 37 A No. 19 B - 41 Ofi. 301 Jordan<br/>6660737');
+ltlng.push(new google.maps.LatLng(4.1513172,-73.6294481))
+matriculamercantil.push('00136846 - 25/01/2006')
+resolucion.push('002482 - 13/06/2006 ')
+city.push('Villavicencio')
+/************************************/
+/*****************(#107)*******************/
+info.push('Simetric Norte<br/>Av 19 No. 122-33 Lc 1 P-2 <br/>');
+ltlng.push(new google.maps.LatLng(4.7024737,-74.0494021))
+matriculamercantil.push('01593192 - 24/05/2006')
+resolucion.push('000118 - 24/01/2007 ')
+city.push('Bogota')
+/************************************/
+/*****************(#108)*******************/
+info.push('Simetric Jamundi<br/>Calle 2 # 22-175 Of 206<br/>');
+ltlng.push(new google.maps.LatLng(3.2556776,-76.5452232))
+matriculamercantil.push('676655 - 31/01/2006')
+resolucion.push('000172 - 09/03/2007 ')
+city.push('Jamundi')
+/************************************/
+/*****************(#109)*******************/
+info.push('Simetric Cucuta<br/>Avenida 3 # 19-26 P-2 Barrio San Luis<br/>5844007');
+ltlng.push(new google.maps.LatLng(7.8785403,-72.500059))
+matriculamercantil.push('00147781 - 06/02/2006')
+resolucion.push('003909 - 30/08/2006 ')
+city.push('Cucuta')
+/************************************/
+/*****************(#110)*******************/
+info.push('Simetric Ips Pasto<br/>Calle 18 # 19-55/56<br/>');
+ltlng.push(new google.maps.LatLng(1.2089671,-77.2762634))
+matriculamercantil.push('125416 - 17/06/2009')
+resolucion.push('004288 - 25/09/2006 ')
+city.push('Pasto')
+/************************************/
+/*****************(#111)*******************/
+info.push('Simetric Popayan<br/>Calle 11 # 8-31<br/>8200283');
+ltlng.push(new google.maps.LatLng(2.4368934,-76.6099316))
+matriculamercantil.push('00088001 - 19/01/2006')
+resolucion.push('004287 - 25/09/2006 ')
+city.push('Popayan')
+/************************************/
+/*****************(#112)*******************/
+info.push('Simetric Cedritos<br/>Cl 147 No. 19-50 Lc 27<br/>');
+ltlng.push(new google.maps.LatLng(4.7296904,-74.0457417))
+matriculamercantil.push('01645664 - 19/10/2006')
+resolucion.push('000157 - 25/01/2007 ')
+city.push('Bogota')
+/************************************/
+/*****************(#113)*******************/
+info.push('Simetric Chia<br/>Av Pradilla # 8-44<br/>');
+ltlng.push(new google.maps.LatLng(4.8631349,-74.0513843))
+matriculamercantil.push('01645582 - 19/10/2006')
+resolucion.push('000158 - 25/01/2007 ')
+city.push('Chia')
+/************************************/
+/*****************(#114)*******************/
+info.push('Simetri Los Patios<br/>Avenida 10 # 37 - 74 P-2<br/>5806849');
+ltlng.push(new google.maps.LatLng(7.811164,-72.5174028))
+matriculamercantil.push('00164143 - 18/07/2007')
+resolucion.push('003560 - 04/09/2007 ')
+city.push('Los Patios')
+/************************************/
+/*****************(#115)*******************/
+info.push('Simetric Bucaramanga<br/>Carrera 33 # 52-40<br/>6470042-6470046');
+ltlng.push(new google.maps.LatLng(7.1122073,-73.1101909))
+matriculamercantil.push('0514295104 - 08/08/2007')
+resolucion.push('003030 - 25/08/2011 ')
+city.push('Bucaramanga')
+/************************************/
+/*****************(#116)*******************/
+info.push('La Union # 2 <br/>Carrera 14 # 15 - 48<br/>2292014');
+ltlng.push(new google.maps.LatLng(5.9740229,-75.3655801))
+matriculamercantil.push('00054467 - 28/11/2006')
+resolucion.push('000312 - 08/02/2007 ')
+city.push('La Union')
+/************************************/
+/*****************(#117)*******************(inactivo)
+info.push('Crc 109 El Espinal<br/>Carrera 7 No. 10-01 P-4<br/>2482761');
+ltlng.push(new google.maps.LatLng(4.1449632,-74.8971644))
+matriculamercantil.push('00050374 - 09/03/2007')
+resolucion.push('001863 - 17/05/2007 ')
+city.push('Espinal')
+/************************************/
+/*****************(#118)*******************(inactivo)
+info.push('Crc Del Caribe<br/>Carrera 59 # 72 - 47<br/>3702239');
+ltlng.push(new google.maps.LatLng(11.0024152,-74.7980444))
+matriculamercantil.push('473339 - 09/02/2009')
+resolucion.push('000952 - 14/03/2012 ')
+city.push('Barranquilla')
+/************************************/
+/*****************(#119)*******************(inactivo)
+info.push('Certificar Norte Ltda<br/>Carrera 38 # 74-314 <br/>3086503');
+ltlng.push(new google.maps.LatLng(10.9742702,-74.7697071))
+matriculamercantil.push('463033 - ')
+resolucion.push('005616 - 26/12/2008 ')
+city.push('Barranquilla')
+/************************************/
+/*****************(#120)*******************(inactivo)
+info.push('Medifusacar Sas<br/>Cl 3 Bis No. 26 C - 26 Lc 115<br/>');
+ltlng.push(new google.maps.LatLng(4.3458289,-74.3663377))
+matriculamercantil.push('021444441 - 26/09/2011')
+resolucion.push(' ')
+city.push('Fusagasuga')
+/************************************/
+/*****************(#121)*******************/
+info.push('Organismo Certificador La Calera Sas<br/>Calle 10a # 2b 31<br/>');
+ltlng.push(new google.maps.LatLng(4.6182498,-74.1029827))
+matriculamercantil.push('02201607 - 09/04/2012')
+resolucion.push(' ')
+city.push('Bogota')
+/************************************/
+/*****************(#122)*******************(inactivo)
+info.push('Certificacion De Conductores Sas<br/>Calle 146b # 90-70<br/>');
+ltlng.push(new google.maps.LatLng(4.7399835,-74.0841641))
+matriculamercantil.push('02180167 - 09/02/2012')
+resolucion.push('007116 - 06-08-2012 ')
+city.push('Bogota')
+/************************************/
+/*****************(#123)*******************/
+info.push('Crc Valledupar Ltda<br/>Calle 18 # 19-21<br/>');
+ltlng.push(new google.maps.LatLng(1.2086781,-77.2761444))
+matriculamercantil.push('125731 - 07/07/2009')
+resolucion.push('004774 - 11/11/2011 ')
+city.push('Pasto')
+/************************************/
+/*****************(#124)*******************(inactivo)
+info.push('Establecimiento Principal<br/>Marbella, Edificio Mar Del Norte Local 8<br/>');
+ltlng.push(new google.maps.LatLng(10.4355446,-75.537768))
+matriculamercantil.push('9211441 - 06/10/2005 ')
+resolucion.push('000949 - 14/03/2012 ')
+city.push('Cartagena')
+/************************************/
+/*****************(#125)*******************(inactivo)
+info.push('A-prueba Santamarta<br/>Cl 15 No. 2-60 Ed. Bolivar Lc 101<br/>4212598-3153940223');
+ltlng.push(new google.maps.LatLng(11.2445618,-74.2129975))
+matriculamercantil.push('00102048 - 07/03/2007')
+resolucion.push('000950 - 14/03/2012 ')
+city.push('Santamarta')
+/************************************/
+/*****************(#126)*******************(inactivo)
+info.push('Acertar Soluciones Sevillana<br/>Tv 60 No. 50-65 Sur<br/>');
+ltlng.push(new google.maps.LatLng(4.5772952,-74.1670513))
+matriculamercantil.push('01934253 - 28/09/2009')
+resolucion.push('004832 - 12/11/2010 ')
+city.push('Bogota')
+/************************************/
+/*****************(#127)*******************(inactivo)
+info.push('Acertar Soluciones Primero De Mayo<br/>Calle 26s # 69a - 45 Piso 2<br/>');
+ltlng.push(new google.maps.LatLng(4.6298693,-74.1528787))
+matriculamercantil.push('01724319 - 26/07/2007')
+resolucion.push('004833 - 12/11/2010 ')
+city.push('Bogota')
+/************************************/
+/*****************(#128)*******************(inactivo)
+info.push('Maxitest Ips Sas <br/>Carrera 10 # 5a - 06<br/>4343879');
+ltlng.push(new google.maps.LatLng(1.6093634,-75.6042446))
+matriculamercantil.push('00071592 - 04/06/2009')
+resolucion.push(' ')
+city.push('Florencia')
+/************************************/
+/*****************(#129)*******************(inactivo)
+info.push('Instituto De Reconocimiento De Personas Irp Sevillana<br/>Av Boyaca No. 50-77 Sur<br/>');
+ltlng.push(new google.maps.LatLng(4.59095,-74.14538))
+matriculamercantil.push('01826531 - 11/08/2008')
+resolucion.push(' ')
+city.push('Bogota')
+/************************************/
+/*****************(#130)*******************(inactivo)
+info.push('Instituto De Reconocimiento De Personas Irp Bahia<br/>Av Suba No. 124 - 20 Lc 2y8 <br/>');
+ltlng.push(new google.maps.LatLng(4.7083218,-74.0714137))
+matriculamercantil.push('')
+resolucion.push(' ')
+city.push('Bogota')
+/************************************/
+/*****************(#131)*******************(inactivo)
+info.push('Instituto De Reconocimiento De Personas Irp Chapinero<br/>Calle 59 # 13-62<br/>');
+ltlng.push(new google.maps.LatLng(4.6460669,-74.0647437))
+matriculamercantil.push('')
+resolucion.push(' ')
+city.push('Bogota')
+/************************************/
+/*****************(#132)*******************(inactivo)
+info.push('Instituto De Reconocimiento De Personas Irp Galerias<br/>Calle 52 # 25 - 44<br/>');
+ltlng.push(new google.maps.LatLng(4.6408606,-74.0749971))
+matriculamercantil.push('')
+resolucion.push(' ')
+city.push('Bogota')
+/************************************/
+/*****************(#133)*******************(inactivo)
+info.push('Instituto De Reconocimiento De Personas Irp Restrepo<br/>Cr 17 No. 19 A - 40 Sur<br/>');
+ltlng.push(new google.maps.LatLng(4.6478747,-74.1256902))
+matriculamercantil.push('')
+resolucion.push(' ')
+city.push('Bogota')
+/************************************/
+/*****************(#134)*******************(inactivo)
+info.push('Certifisalud Ltda<br/>Calle 21 # 5a - 70<br/>8754801');
+ltlng.push(new google.maps.LatLng(2.9422583,-75.2580346))
+matriculamercantil.push('00165431 - 03/10/2006')
+resolucion.push('004038 - 28/09/2007 ')
+city.push('Neiva')
+/************************************/
+/*****************(#135)*******************/
+info.push('Namaste Soacha<br/>Cr 9 No. 12-92 Lc 1<br/>');
+ltlng.push(new google.maps.LatLng(4.5835337,-74.2201883))
+matriculamercantil.push('')
+resolucion.push('004538 - 30/08/2007 ')
+city.push('Soacha')
+/************************************/
+/*****************(#136)*******************/
+info.push('Franquicia Girardot<br/>Cr 12 No. 17-29 Lc 2 Cc El Parque<br/>8351471');
+ltlng.push(new google.maps.LatLng(4.2929855,-74.8071597))
+matriculamercantil.push('00047659 - 01/09/2006')
+resolucion.push('004858 - 31/10/2006 ')
+city.push('Girardot')
+/************************************/
+/*****************(#137)*******************/
+info.push('Intras Centro De Reconocimiento De Conductores S.a. – Intras C.r.c. S.a<br/>Carrera 100 # 15 A - 61 Local 216<br/>3130275 - 3206872687');
+ltlng.push(new google.maps.LatLng(3.3674724,-76.5299043))
+matriculamercantil.push('836539-4 - 06/02/2012')
+resolucion.push('001513 - 12/04/2012 ')
+city.push('Cali')
+/************************************/
+/*****************(#138)*******************/
+info.push('C.r.c. Certificar S.a.s., <br/>Cra 6 No. 51-28 Barrio Villa Olimpica<br/>3017049582-7912329');
+ltlng.push(new google.maps.LatLng(8.7637222,-75.8768915))
+matriculamercantil.push('0011214 - 14/06/2011')
+resolucion.push('000953 - 14/03/2012 ')
+city.push('Monteria')
+/************************************/
+/*****************(#139)*******************/
+info.push('Certificar Soledad Sociedad Por Acción Simplificada S.a.s., <br/>Calle 25 # 18-35<br/>3420847');
+ltlng.push(new google.maps.LatLng(10.9173638,-74.7706745))
+matriculamercantil.push('003516 – 30/08/2010')
+resolucion.push('497,775 – 06/04/2010 ')
+city.push('Soledad')
+/************************************/
+/*****************(#140)*******************/
+info.push('Centro De Reconocimiento De Conductores Buga Ltda.<br/>Calle 6 No. 16-40<br/>2362666 - 2286666');
+ltlng.push(new google.maps.LatLng(4.2119314,-76.1565836))
+matriculamercantil.push('40479-3 18/09/2008')
+resolucion.push('005289 - 15/12/2008 ')
+city.push('Bugalagrande')
+/************************************/
+/*****************(#141)*******************/
+info.push('Cpps Bogota 1<br/>Calle 122 # 19-59 <br/>');
+ltlng.push(new google.maps.LatLng(4.7019057,-74.0499645))
+matriculamercantil.push('')
+resolucion.push(' ')
+city.push('Bogota')
+/************************************/
+/*****************(#142)*******************/
+info.push('Crps Bogota 2<br/> Avenida Caracas # 44-54 Oficina 201-sede Suspendida: Comité De Apelaciones 2012-02-10. <br/>');
+ltlng.push(new google.maps.LatLng(4.6320185,-74.0676448))
+matriculamercantil.push('')
+resolucion.push(' ')
+city.push('Bogota')
+/************************************/
+/*****************(#143)*******************/
+info.push('Crps Bogota 3<br/>Calle 64 G # 90 A - 29 <br/>');
+ltlng.push(new google.maps.LatLng(4.6884884,-74.1148675))
+matriculamercantil.push('')
+resolucion.push(' ')
+city.push('Bogota')
+/************************************/
+/*****************(#144)*******************/
+info.push('Ser Conductor Mocoa<br/>Cl 8 No 04 - 02 Piso 3<br/>(8) 4295055');
+ltlng.push(new google.maps.LatLng(1.1460533,-76.646534))
+matriculamercantil.push('34079 - 18/12/2009')
+resolucion.push('000963 - 05/04/2011 ')
+city.push('Mocoa')
+/************************************/
+/*****************(#145)*******************/
+info.push('Servisalud I.p.s Bucaramanga<br/>Carrera 33 No. 48 - 66<br/>3133913888 32089917013133913888 32089917013133913888 32089917013133913888 3208991701');
+ltlng.push(new google.maps.LatLng(7.1159978,-73.110957))
+matriculamercantil.push('145796-27/03/2008')
+resolucion.push('005370 - 02/12/2011 ')
+city.push('Bucaramanga')
+/************************************/
+/*****************(#146)*******************/
+info.push('Servisalud I.p.s Floridablanca<br/>Carrera 8 # 9 – 02 <br/>6496893');
+ltlng.push(new google.maps.LatLng(7.080443,-73.0997899))
+matriculamercantil.push('145798 -27/03/2008')
+resolucion.push(' ')
+city.push('Floridablanca')
+/************************************/
+/*****************(#147)*******************/
+info.push('Servisalud I.p.s Giron<br/>Carrera 26 # 31 – 53 <br/>6466769');
+ltlng.push(new google.maps.LatLng(7.0684765,-73.1697655))
+matriculamercantil.push('145798- 27/03/2008')
+resolucion.push('004774 - 11/11/2011 ')
+city.push('Giron')
+/************************************/
+/*****************(#148)*******************(inactivo)
+info.push('Certipasto<br/>Cl 18 No. 19-21<br/>');
+ltlng.push(new google.maps.LatLng(1.2086781,-77.2761444))
+matriculamercantil.push('125731 - 07/07/2009')
+resolucion.push(' ')
+city.push('Pasto')
+/************************************/
+/*****************(#149)*******************(inactivo)
+info.push('Centro De Reconocimiento Del Occidente Colombiano Ltda<br/>Cr 64 C No 74-16<br/>');
+ltlng.push(new google.maps.LatLng(6.310168,-75.561799))
+matriculamercantil.push('21-433971-3 - 03/05/2010')
+resolucion.push(' ')
+city.push('Medellin')
+/************************************/
+/*****************(#150)*******************(inactivo)
+info.push('Centro De Reconocimiento Del Occidente Colombiano Ltda<br/>Calle 96 No 99-38<br/>');
+ltlng.push(new google.maps.LatLng(7.66925,-76.68415))
+matriculamercantil.push('')
+resolucion.push(' ')
+city.push('Chigorodo')
+/************************************/
+/*****************(#151)*******************(inactivo)
+info.push('Centro De Reconocimiento Del Occidente Colombiano Ltda<br/>Calle 22 # 15a-16 <br/>');
+ltlng.push(new google.maps.LatLng(6.0305006,-75.425261))
+matriculamercantil.push('')
+resolucion.push('000787 - 06/03/2009 ')
+city.push('La Ceja')
+/************************************/
+/*****************(#152)*******************(inactivo)
+info.push('Crc 104 Florencia<br/>Calle 17 # 5-68 Barrio 7 De Agosto<br/>');
+ltlng.push(new google.maps.LatLng(1.6185532,-75.6087238))
+matriculamercantil.push('00068159 - 28/08/2008')
+resolucion.push(' ')
+city.push('Florencia')
+/************************************/
+/*****************(#153)*******************(inactivo)
+info.push('Certisur Ltda<br/>Calle 50 No 46-27<br/>');
+ltlng.push(new google.maps.LatLng(6.1691957,-75.6086049))
+matriculamercantil.push('')
+resolucion.push('004548 - 01/11/2011 ')
+city.push('Itagui')
+/************************************/
+/*****************(#154)*******************(inactivo)
+info.push('Centro De Reconocimiento De Sucre Limitada<br/>Calle 22 No 18-35<br/>3003402769');
+ltlng.push(new google.maps.LatLng(9.3016395,-75.3951851))
+matriculamercantil.push('O0O56091 - 28/03/012')
+resolucion.push('001289 - 03/05/2011 ')
+city.push('Sincelejo')
+/************************************/
+/*****************(#155)*******************(inactivo)
+info.push('Previtest Unicentro<br/>Calle 121 No 14a-55<br/>637 34 09 637 34 09');
+ltlng.push(new google.maps.LatLng(4.7003265,-74.0409611))
+matriculamercantil.push('01693361 - 12/04/2007')
+resolucion.push('0020058 - 23/06/2011 ')
+city.push('Bogota')
+/************************************/
+/*****************(#156)*******************(inactivo)
+info.push('Previtest Carrera 30<br/>Av Quito No 67-62<br/>');
+ltlng.push(new google.maps.LatLng())
+matriculamercantil.push('01693361 - 12/04/2007')
+resolucion.push('004495 - 26/10/2007 ')
+city.push('Bogota')
+/************************************/
+/*****************(#157)*******************(inactivo)
+info.push('Previtest Distrital<br/>Calle 19 No 36-28<br/>6290855');
+ltlng.push(new google.maps.LatLng(4.6229626,-74.0930969))
+matriculamercantil.push('01740472 - ')
+resolucion.push(' ')
+city.push('Bogota')
+/************************************/
+/*****************(#158)*******************(inactivo)
+info.push('Certisalud Ips Ltda<br/>Avenida 10 # 28 - 46<br/>3208400259-3165257890');
+ltlng.push(new google.maps.LatLng(7.8808113,-72.4806025))
+matriculamercantil.push('')
+resolucion.push('OO5640 -18/11/2009 ')
+city.push('Los Patios')
+/************************************/
+/*****************(#159)*******************(inactivo)
+info.push('Centro De Reconocimiento De Conductores A.c.c. De La Costa I.p.s. S.a.s. - C.r.c. A.c.c. De La Costa I.p.s<br/>Carrera 46 # 48-91 Local 2<br/>3004374344');
+ltlng.push(new google.maps.LatLng(10.9848775,-74.7703289))
+matriculamercantil.push('431534')
+resolucion.push(' ')
+city.push('Barranquilla')
+/************************************/
+/*****************(#160)*******************(inactivo)
+info.push('Hablenaud Ltda<br/>Calle 8 Sur No. 40-94<br/>F');
+ltlng.push(new google.maps.LatLng(4.6382405,-74.1416754))
+matriculamercantil.push('')
+resolucion.push('000120 - 15/01/2009 ')
+city.push('Bogota')
+/************************************/
+/*****************(#161)*******************(inactivo)
+info.push('Diagnostipase Calle 70<br/>Cra 43 No 70-162<br/>5381566');
+ltlng.push(new google.maps.LatLng(10.990410802782455,-74.80494260787964))
+matriculamercantil.push('465,34 -')
+resolucion.push(' ')
+city.push('Barranquilla')
+/************************************/
+/*****************(#162)*******************(inactivo)
+info.push('Diagnostipase Country<br/>Cra 59b No 77-11 <br/>');
+ltlng.push(new google.maps.LatLng(11.0080344,-74.8038601))
+matriculamercantil.push('')
+resolucion.push('005147 - 28/11/2007 ')
+city.push('Barranquilla')
+/************************************/
+/*****************(#163)*******************(inactivo)
+info.push('Ips Centro De Reconocimiento De Conductores Condusalud Sas<br/>Cra 47 No 84-20 Oficina 207<br/>3776003');
+ltlng.push(new google.maps.LatLng(11.00257367654511,-74.81942653656006))
+matriculamercantil.push('432.605')
+resolucion.push('448,505 - 07/12/2007 ')
+city.push('Barranquilla')
+/************************************/
+/*****************(#164)*******************(inactivo)
+info.push('Certimedic Barranquilla<br/>Cra 38 No 74-244 <br/>3720856');
+ltlng.push(new google.maps.LatLng(10.9730256,-74.7660043))
+matriculamercantil.push('')
+resolucion.push('002966 - 21/07/2010 ')
+city.push('Barranquilla')
+/************************************/
+/*****************(#165)*******************(inactivo)
+info.push('Crc De Medellin-certimedellin<br/>Calle 45 No 70a-30<br/>3008442256');
+ltlng.push(new google.maps.LatLng(6.2357006,-75.5514063))
+matriculamercantil.push('21-4144487-03')
+resolucion.push('003576 - 05/08/2009 ')
+city.push('Medellin')
+/************************************/
+/*****************(#166)*******************(inactivo)
+info.push('Centro De Reconocimiento De La Costa Ltda Certicosta Ltda<br/>Calle 88 No 73-38 Piso 2<br/>3185478780');
+ltlng.push(new google.maps.LatLng(11.0209153,-74.8125488))
+matriculamercantil.push('473.346')
+resolucion.push('002856 - 16/07/2007 ')
+city.push('Barranquilla')
+/************************************/
+/*****************(#167)*******************(inactivo)
+info.push('Centro De Reconocimiento De Colombia Certicol<br/>Cr 64 No 84-120<br/>3002193642');
+ltlng.push(new google.maps.LatLng(10.9960447,-74.7969273))
+matriculamercantil.push('')
+resolucion.push(' ')
+city.push('Barranquilla')
+/************************************/
+/*****************(#168)*******************(inactivo)
+info.push('Laguna Baute Ltda-sede Cedritos<br/>Av Cr 19 No 147_30 Local 14<br/>3138934059-6270306 -6299244');
+ltlng.push(new google.maps.LatLng(4.7298947,-74.0451055))
+matriculamercantil.push('0056771 - 03/07/2012')
+resolucion.push(' ')
+city.push('Bogota')
+/************************************/
+/*****************(#169)*******************(inactivo)
+info.push('Laguna Baute Ltda-sede Restrepo<br/>Carrera 17 # 18-14 Sur Piso 2<br/>3138934059-6270306 -6299245');
+ltlng.push(new google.maps.LatLng(4.6099143,-74.0795655))
+matriculamercantil.push('0056771 - 03/07/2012')
+resolucion.push(' ')
+city.push('Bogota')
+/************************************/
+   
+		var auxcity=city.slice();
+		auxcity.sort();
+		
+		selectcity.push("Todas las Ciudades..");
+		//selectcity.push(auxcity[0]);
+		
+		for(var i = 1; i < auxcity.length; i++){
+			//document.getElementById('mapita').innerHTML+=city[i];
+		   
+			   if(auxcity[i]!=auxcity[i-1]){
+				   
+			     selectcity.push(auxcity[i]);
+			   }	
+	    }
+		
+			
+		var posicion=document.getElementById('city').value; //posicion
+		
+		//initialize map to a selected point
+		  
+		 for (var i = 0; i <= ltlng.length; i++) {
+		   
+				if(selectcity[posicion]==city[i]){
+					   
+					   InitializeMap(ltlng[i],12);
+					   
+					   break;
+					   
+				}else
+				   {
+						 if(posicion==0){ 
+							InitializeMap(new google.maps.LatLng(4.5980556,-74.0758333),6); 
+							break;
+						 }
+					}
+			 }
+		
+		
+		var htmlvar="<table id='tablejs' align='center'>";
+		
+		htmlvar+="<tr>";
+		htmlvar+="<th id='thjs'>Nombre</th>";
+		htmlvar+="<th id='thjs'>Direccion</th>";
+		htmlvar+="<th id='thjs'>Teléfono</th>";
+		htmlvar+="<th id='thjs'>Ciudad</th>";
+		htmlvar+="</tr>";
+		
+		for(var i = 0; i < info.length; i++){
+			
+			if(posicion==0 || selectcity[posicion]==city[i]){	
+			
+				cad=info[i].split("<br/>");	
+				 infotooltip="<b>Matricula Mercantil:</b>"+matriculamercantil[i]+"<br/><hr/><b>Resolucion:</b>"+resolucion[i];
+				  htmlvar+="<tr>"
+				for(var w = 0; w < cad.length; w++){
+					if(w==0){
+					   htmlvar+="<td id='tdjs'>"+cad[w]+" <a href='#' class='tooltip' ><b>(Ver Más..)</b><span>"+infotooltip+"</span></a></td>";
+				}else    
+					   htmlvar+="<td id='tdjs'>"+cad[w]+"</td>";
+				}
+				htmlvar+="<td id='tdjs'>"+city[i]+"</td>";
+				htmlvar+="</tr>";
+			}
+				
+		 }
+		// htmlvar+='<tr><td><a href="#" onclick="paintdata(2)">Mostrar Ubicacion</a><br></td></tr>';
+		 htmlvar+="</table>";
+		
+		/*
+		var htmlvar="<table id='tablejs'>";
+		
+		for(var i = 0; i < info.length; i++){
+			
+			if(posicion==0 || selectcity[posicion]==city[i]){	
+			
+				cad=info[i].split("<br/>");
+				infotooltip="<b>Matricula Mercantil:</b>"+matriculamercantil[i]+"<br/><hr/><b>Resolucion:</b>"+resolucion[i];	
+				htmlvar+="<tr><td id='tdjs'>";
+			for(var w = 0; w < cad.length; w++){
+					if(w==0)   		 
+					htmlvar+="<b>"+cad[w]+"</b><br/>";
+					else
+					htmlvar+="<span id='_inf'><b>"+cad[w]+"</b></span><br/>";
+				}
+				htmlvar+="<a href='#' class='tooltip' ><b>(Ver Más)</b><span>"+infotooltip+"</span></a>"; 
+				htmlvar+="</td></tr>";
+				
+			}
+				
+		 }
+		// htmlvar+='<tr><td><a href="#" onclick="paintdata(2)">Mostrar Ubicacion</a><br></td></tr>';
+		 htmlvar+="</table>";
+		 */
+		 document.getElementById('table').innerHTML=htmlvar;
+		// document.getElementById("data").value=htmlvar;
+      // alert(htmlvar)
+			
+		for(var i = 0; i < selectcity.length; i++){
+			
+			if(i==posicion)
+			  def="defaultSelected";
+			else
+			  def=false; 
+			
+			cityopt=new Option(selectcity[i],i,false,def);
+			
+		    document.getElementById("city").options[i]=cityopt;
+		}
+		
+       // map.setCenter(ltlng[0]);
+        for (var i = 0; i <= ltlng.length; i++) {
+	
+		if(posicion==0 || selectcity[posicion]==city[i]){	
+		
+            marker = new google.maps.Marker({
+                map: map,
+                position: ltlng[i]
+            });
+			
+			marker.setIcon('/Data/Sites/1/htmlfragments/crc1.jpg');	
+            
+			(function (i, marker) {
+
+                google.maps.event.addListener(marker, 'click', function () {
+
+                    if (!infowindow) {
+                        infowindow = new google.maps.InfoWindow();
+                    }
+
+                    infowindow.setContent(info[i]);
+
+                    infowindow.open(map, marker);
+
+                });
+
+            })(i, marker);
+
+		 }//end if
+        }//end for
+
+    }
+
+    window.onload = markicons; 
+	
+
+</script>
+	<style type="text/css">
+    #resultado{
+        float:left;
+    }
+    #FilterContainer{
+        float:right;
+        }
+    #container{
+        margin:0 auto;
+        width: 900px;
+    }
+    #tablejs {
+      /*border-style:double;
+      background-color:#d7d7d7;
+      border-spacing:5px;*/
+	  width:100%;
+      font-size:11px;
+      font-family:Arial, Helvetica, sans-serif;
+	  
+     }
+    
+    #thls {
+      border-style:solid;
+      background-color:#d7d7d7;
+     }
+      
+    #tdjs {
+      /*border-style:groove;*/
+      background-color:#FBFBFB;
+      padding:5px;
+     }
+    a {text-decoration: none;}
+    a:hover {text-decoration:underline;/*color:#FFC796;*/} 
+	
+	a.tooltip:hover { 
+	text-decoration:none;
+	} 
+	
+	a.tooltip span {
+	display:none; 
+	margin:0 0 0 10px; 
+	padding:5px 5px; 
+	} 
+	/*
+	a.tooltip:hover span {
+	display: block;
+	border: 1px solid #FFC796;
+	background: white;
+	color: #666;
+	position: absolute;
+	right: 200px;
+	top: 500px;
+
+	}
+	*/
+	a.tooltip:hover span {
+	display:inline; 
+	position:absolute; 
+	border:1px solid #cccccc; 
+	background:#ffffff; 
+	color:#666666; 
+	}
+	
+    hr {
+    color: #FFC796;
+    background-color: #FFC796;
+    height: 1px;
+    border: 0;
+    }
+	#_inf{
+		color:#7D7D7D;
+		}
+    </style>
+	<link href="SpryAssets/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
+<p>Seleccione su ciudad para ubicar los CRC más cercanos:</p>
+
+        <div id='sel'>
+        
+            <form name="form" id="form" method="post" action="prueba.html">
+            <fieldset>
+            <legend>Seleccione:</legend>
+            <select name="city" id='city' onchange="getid(this.value)">
+            <option value="0" selected="selected">Seleccione...</option>
+            </select>
+            <input type="hidden" id="data" name="data" >
+            <!--
+            <br/>
+            <hr/>
+            <a href="#tblid" onclick="paintdata(1)"><h4>Ver Informacion</h4></a>
+            <hr/>
+            <a href="#tblid" onclick="paintdata(2)"><h4>Ver Mapa</h4></a>
+            -->
+            </fieldset>
+          </form>
+</div>
+  
+    
+  
+<div id="TabbedPanels1" class="TabbedPanels">
+  <ul class="TabbedPanelsTabGroup">
+    <li class="TabbedPanelsTab" tabindex="0">Ver Mapa</li>
+    <li class="TabbedPanelsTab" tabindex="0">Ver Tabla</li>
+  </ul>
+  <div class="TabbedPanelsContentGroup">
+    <div class="TabbedPanelsContent">
+    	<div id ="map"   
+            style="width: 950px;  height: 400px">
+    	</div>
+    </div>
+    <div class="TabbedPanelsContent">
+    	<div id='table' style="width: 950px;">
+    	</div>
+    </div>
+  </div>
+</div>
+<p>&nbsp;</p>
+    <script type="text/javascript">
+var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
+    </script>
