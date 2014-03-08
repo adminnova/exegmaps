@@ -1,5 +1,5 @@
 <?php
-$file=file("nombre_archivo.csv");
+$file=file("puntos.csv");
 foreach ($file as $num_linea => $linea) {
 	
 	$data=explode(";",$linea);
