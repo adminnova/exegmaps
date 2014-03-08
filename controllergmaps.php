@@ -35,7 +35,7 @@
 	$params['depto']=5;
 	$params['id']=$_POST['id'];
 	$params['test']=$_POST['exetest'];
-	$filename="tablabaloto2exe.csv";
+	$filename="tabla.csv";
 	
 	//execute file
 	converttocoordinates($filename,$params);
@@ -80,11 +80,11 @@ function converttocoordinates($filename,$params)
 	$file=file($filename);
 	
 	
-	$arr[1]=date('Y-m-d H-m-s')."file1";
+	$arr[1]="puntos";
 	$arr[2]="file2";
 	$arr[3]="file3";
 	
-	$fileauxname=$arr[$params['id']]."_baloto.csv";
+	$fileauxname=$arr[$params['id']].".csv";
 	
 	$fw=fopen($fileauxname,"w+");
 	

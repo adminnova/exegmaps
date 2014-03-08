@@ -21,7 +21,7 @@
 		<form name="forma" method="post" action="controllergmaps.php">
 		<select name="id">
 		<option value="-1">Seleccione .....</option>
-		<option value="1">Armar csv para --> Archivo</option>
+		<option value="1">Armar csv para --> tabla.csv</option>
 		</select>
 		<input type="submit" class="small round button" value="Convertir"><br/>
 				      <label>Escoge un Modo.</label>
