@@ -5,7 +5,11 @@
 	//Subject: PHP google maps generator v 1.0
 	//Developer: David f Castillo
 	//Date: 2012/11/22
+	//Modificado: Carlos Rojas
+	//Se volvio mas generico y se le metio buena interfaz.
 	/*******************************************/
+
+$debug= true; // esta variable ejecuta los sistemas de depuracion si true
 
     if(!$_POST || $_POST['id']=="-1")
 	  {
@@ -43,10 +47,10 @@
 
 function getLatLong($address){
     if (!is_string($address))die("All Addresses must be passed as a string");
-  //  $_url = sprintf('http://maps.google.com/maps?output=js&q=%s',rawurlencode($address));
   $_url = sprintf('http://maps.googleapis.com/maps/api/geocode/json?address=%s&sensor=false',rawurlencode($address));
-	//echo $_url;
-    //$_result = false;
+		echo $_url;
+    	$_result = false;
+	
     if($_result = file_get_contents($_url)) {
        // if(strpos($_result,'errortips') > 1 || strpos($_result,'Did you mean:') !== false) return false;
        // preg_match('!center:\s*{lat:\s*(-?\d+\.\d+),lng:\s*(-?\d+\.\d+)}!U', $_result, $_match);
@@ -81,8 +85,6 @@ function converttocoordinates($filename,$params)
 	
 	
 	$arr[1]="puntos";
-	$arr[2]="file2";
-	$arr[3]="file3";
 	
 	$fileauxname=$arr[$params['id']].".csv";
 	
@@ -148,6 +150,7 @@ exit;
 
 
 //Atencion:zona En contruccion
+//TODO: hacer que el archivo generado se visualize
 
 
 $file=file("baloto.csv");
