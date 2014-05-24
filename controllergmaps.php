@@ -19,7 +19,7 @@ $debug= true; // esta variable ejecuta los sistemas de depuracion si true
 	{
 		case 1:
 		$params['li']=0;
-		$params['ls']=367;
+		$params['ls']=2500;
 		break;
 		
 		case 2:
@@ -34,9 +34,9 @@ $debug= true; // esta variable ejecuta los sistemas de depuracion si true
 		
 	}
 
-	$params['direccion']=4;
-	$params['ciudad']=3;
-	$params['depto']=5;
+	$params['direccion']=0;
+	$params['ciudad']=1;
+	$params['depto']=2;
 	$params['id']=$_POST['id'];
 	$params['test']=$_POST['exetest'];
 	$filename="tabla.csv";
@@ -47,9 +47,9 @@ $debug= true; // esta variable ejecuta los sistemas de depuracion si true
 
 function getLatLong($address){
     if (!is_string($address))die("All Addresses must be passed as a string");
-  $_url = sprintf('http://maps.googleapis.com/maps/api/geocode/json?address=%s&sensor=false',rawurlencode($address));
-		echo $_url;
-    	$_result = false;
+  $_url = sprintf('http://maps.googleapis.com/maps/api/geocode/json?address=%s&sensor=false',utf8_encode(str_replace(' ','%20',$address)));
+		//echo $_url;
+    	//$_result = false;
 	
     if($_result = file_get_contents($_url)) {
        // if(strpos($_result,'errortips') > 1 || strpos($_result,'Did you mean:') !== false) return false;
@@ -91,7 +91,8 @@ function converttocoordinates($filename,$params)
 	$fw=fopen($fileauxname,"w+");
 	
 	foreach ($file as $num_linea => $linea) {
-	
+	  
+	  if(isset($num_linea)){ 
 	  if($num_linea>=$params['li'] && $num_linea<=$params['ls']){
 		  //echo $num_linea."<br/>";
 		  $data=explode(";",$linea);
@@ -132,6 +133,7 @@ function converttocoordinates($filename,$params)
 		
 		
 		}//end if
+	}
 	}
 	fclose($fw);
 	printfile($fileauxname);
