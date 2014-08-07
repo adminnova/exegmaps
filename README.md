@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/adminnova/exegmaps.png?label=ready&title=Ready)](https://waffle.io/adminnova/exegmaps)
 exegmaps
 ========
 
